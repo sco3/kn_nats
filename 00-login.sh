@@ -1,0 +1,1 @@
+sudo -E cat /var/lib/faasd/secrets/basic-auth-password | faas-cli login -s

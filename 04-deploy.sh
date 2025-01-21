@@ -1,0 +1,1 @@
+faas-cli deploy -f ./hello-python.yml
