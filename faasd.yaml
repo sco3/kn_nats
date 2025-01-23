@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  nats-connector:
+    image: <your-docker-registry>/nats-connector:latest 
+    deploy:
+      placement:
+        constraints: [node.role == worker] 
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - NATS_SERVERS=nats://<your-nats-server-host>:<your-nats-server-port> 
+      - CONNECTOR_NAME=nats # Optional: Customize the connector name
